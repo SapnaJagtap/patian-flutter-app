@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+import 'package:my_app/screens/register_screen.dart';
+import 'screens/register_screen.dart';
 
 void main() {
   runApp(const AarogyKendraApp());
@@ -17,7 +18,7 @@ class AarogyKendraApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF0A7A52)),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: const RegisterScreen(),
     );
   }
 }
