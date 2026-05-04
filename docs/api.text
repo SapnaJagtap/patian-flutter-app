@@ -1,0 +1,84 @@
+
+Perfect. Use this in frontend:
+
+BASE_URL = "http://3.26.10.0:8080"
+
+Set header for protected APIs:
+Authorization: Bearer <token>
+
+Public endpoints
+POST  http://3.26.10.0:8080/auth/login
+POST  http://3.26.10.0:8080/auth/register
+POST  http://3.26.10.0:8080/auth/google
+POST  http://3.26.10.0:8080/auth/apple
+GET   http://3.26.10.0:8080/auth/check-email?email=
+GET   http://3.26.10.0:8080/auth/check-username?username=
+POST  http://3.26.10.0:8080/auth/forgot-password
+POST  http://3.26.10.0:8080/auth/reset-password
+POST  http://3.26.10.0:8080/auth/verify
+GET   http://3.26.10.0:8080/test
+Doctor + Patient core
+GET   http://3.26.10.0:8080/auth/me
+
+GET   http://3.26.10.0:8080/doctor/dashboard
+
+POST  http://3.26.10.0:8080/patients
+GET   http://3.26.10.0:8080/patients
+GET   http://3.26.10.0:8080/patients?search=&status=&page=&limit=
+GET   http://3.26.10.0:8080/patients/{id}
+GET   http://3.26.10.0:8080/patients/search?query=
+PUT   http://3.26.10.0:8080/patients/{id}
+PATCH http://3.26.10.0:8080/patients/{id}
+DELETE http://3.26.10.0:8080/patients/{id}
+GET   http://3.26.10.0:8080/patients/{id}/history
+GET   http://3.26.10.0:8080/patients/{id}/vitals/current
+GET   http://3.26.10.0:8080/patients/{id}/diagnoses
+GET   http://3.26.10.0:8080/patients/{id}/prescriptions
+
+POST  http://3.26.10.0:8080/diagnoses
+GET   http://3.26.10.0:8080/diagnoses/patient/{patientId}
+GET   http://3.26.10.0:8080/diagnoses?patientId=&priority=&status=
+PUT   http://3.26.10.0:8080/diagnoses/{id}
+PATCH http://3.26.10.0:8080/diagnoses/{id}/status
+DELETE http://3.26.10.0:8080/diagnoses/{id}
+
+POST  http://3.26.10.0:8080/prescriptions
+GET   http://3.26.10.0:8080/prescriptions/{id}
+GET   http://3.26.10.0:8080/prescriptions/patient/{patientId}
+GET   http://3.26.10.0:8080/prescriptions?patientId=&status=
+PUT   http://3.26.10.0:8080/prescriptions/{id}
+PATCH http://3.26.10.0:8080/prescriptions/{id}/status
+DELETE http://3.26.10.0:8080/prescriptions/{id}
+GET   http://3.26.10.0:8080/prescriptions/{id}/pdf
+Nurse + Queue + Tasks
+GET   http://3.26.10.0:8080/nurse/dashboard
+GET   http://3.26.10.0:8080/nurse/ward-patients?wardId=&priority=
+POST  http://3.26.10.0:8080/nurse/notes
+
+POST  http://3.26.10.0:8080/vitals
+GET   http://3.26.10.0:8080/vitals/patient/{patientId}
+PUT   http://3.26.10.0:8080/vitals/{id}
+
+POST  http://3.26.10.0:8080/queue
+GET   http://3.26.10.0:8080/queue
+PUT   http://3.26.10.0:8080/queue/{id}
+DELETE http://3.26.10.0:8080/queue/{id}
+
+GET   http://3.26.10.0:8080/tasks?wardId=&shiftDate=
+POST  http://3.26.10.0:8080/tasks
+PATCH http://3.26.10.0:8080/tasks/{id}
+Billing
+GET   http://3.26.10.0:8080/billing/patients/search?q=
+GET   http://3.26.10.0:8080/insurance/providers
+
+POST  http://3.26.10.0:8080/billing/invoices
+GET   http://3.26.10.0:8080/billing/invoices/{id}
+PUT   http://3.26.10.0:8080/billing/invoices/{id}
+
+POST  http://3.26.10.0:8080/billing/invoices/{id}/items
+PUT   http://3.26.10.0:8080/billing/invoices/{id}/items/{itemId}
+DELETE http://3.26.10.0:8080/billing/invoices/{id}/items/{itemId}
+
+POST  http://3.26.10.0:8080/billing/invoices/{id}/draft
+POST  http://3.26.10.0:8080/billing/invoices/{id}/send
+GET   http://3.26.10.0:8080/billing/invoices/{id}/pdf
